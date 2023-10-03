@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <link rel = "stylesheet" href="styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1> In this game, Hot and Cold the user will guess the number.</h2>
+    <h2> If your guess is within a certain number a reponse will display.</h3>
+    <ul>
+        <li> Within 5: Very Hot</li>
+        <li> Within 6-8: Hot</li>
+        <li> Within 9-15: Very Warm</li>
+        <li> Within 16-20: Warm</li>
+        <li> Within 21-30: Cool </li>
+        <li> Within 31-40: Very Cool</li>
+        <li> Within 41-55: Cold</li>
+        <li> More than 55 away: Very Cold</li>
+    </ul>
+    <h3> Warning: The computer may lie about the result</h3>
+    <p id="current">Current Value: 50</p>
+    <p id="guesses">Number of guesses left: 5</p>
+    <p id="result"></p>
+    <button type="button" id="a1">Add 1</button>
+    <button type="button" id="a5">Add 5</button>
+    <button type="button" id="a10">Add 10</button>
+    <button type="button" id="a25">Add 25</button>
+    <button type="button" id="b1">Subtract 1</button>
+    <button type="button" id="b5">Subtract 5</button>
+    <button type="button" id="b10">Subtract 10</button>
+    <button type="button" id="b25">Subtract 25</button>
+    <button type="button" id="commit">Commit</button>
+    <button type="button" id="resetButton">Reset</button>
+    <script src = "game.js"></script>
+</body>
+</html>
