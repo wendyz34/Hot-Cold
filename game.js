@@ -28,6 +28,8 @@ resetButton.addEventListener("click", resetButtonHandler);
 let current = 50;
 let guessNumber = Math.floor(Math.random() * 100 + 1);
 let numGuess = 5;
+let num = []; 
+
 
 // Function to update the current number
 function updateCurrent(value) {
@@ -37,6 +39,7 @@ function updateCurrent(value) {
 
 // Handle button clicks
 function handleClick(buttonId) {
+    // makes value within 1-100
     if (buttonId === "a1") {
         updateCurrent(1);
     } else if (buttonId === "a5") {
@@ -56,11 +59,14 @@ function handleClick(buttonId) {
     }
 }
 
+
 // Check the guessed value
 function commit() {
     const difference = Math.abs(current - guessNumber);
+    //lie about the result 
     if (difference <= 5) {
-        resultElement.textContent = "Within 5: Very Hot";
+        resultElement.textContent = "No clues. find the pattern";
+        numGuess+=1;
     } else if (difference <= 8) {
         resultElement.textContent = "Within 6-8: Hot";
     } else if (difference <= 15) {
@@ -76,12 +82,19 @@ function commit() {
     } else {
         resultElement.textContent = "More than 55 away: Very Cold";
     }
+    //subtract guesses
     numGuess--;
     document.querySelector("#guesses").textContent = "Number of guesses left: " + numGuess;
     if (numGuess === 0) {
         c.disabled = true;
         resultElement.textContent = "Out of guesses. The number was " + guessNumber;
     }
+    //list numbers 
+    num.push(current);
+    for (i = 0; i < num.length; i++){
+        resultElement.textContent = "Previous guesses: " + num[i] + resultElement.textContent + ", ";
+    }
+    
 }
 
 // Reset button handler
