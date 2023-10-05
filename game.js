@@ -34,12 +34,13 @@ let num = [];
 // Function to update the current number
 function updateCurrent(value) {
     current += value;
+    // Ensure current stays within the range 0-100
+    current = Math.min(100, Math.max(0, current));
     currentElement.textContent = "Current Value: " + current;
 }
 
 // Handle button clicks
 function handleClick(buttonId) {
-    // makes value within 1-100
     if (buttonId === "a1") {
         updateCurrent(1);
     } else if (buttonId === "a5") {
@@ -58,44 +59,51 @@ function handleClick(buttonId) {
         updateCurrent(-25);
     }
 }
-
+// Initialize the guesses array
+const guesses = [];
 
 // Check the guessed value
 function commit() {
     const difference = Math.abs(current - guessNumber);
-    //lie about the result 
+    
+    // Determine the guess result
+    let guessResult = "";
+
     if (difference <= 5) {
-        resultElement.textContent = "No clues. find the pattern";
-        numGuess+=1;
+        guessResult = "No clues. Find the pattern";
+        numGuess += 1;
     } else if (difference <= 8) {
-        resultElement.textContent = "Within 6-8: Hot";
+        guessResult = "Within 6-8: Hot";
     } else if (difference <= 15) {
-        resultElement.textContent = "Within 9-15: Very Warm";
+        guessResult = "Within 9-15: Very Warm";
     } else if (difference <= 20) {
-        resultElement.textContent = "Within 16-20: Warm";
+        guessResult = "Within 16-20: Warm";
     } else if (difference <= 30) {
-        resultElement.textContent = "Within 21-30: Cool";
+        guessResult = "Within 21-30: Cool";
     } else if (difference <= 40) {
-        resultElement.textContent = "Within 31-40: Very Cool";
+        guessResult = "Within 31-40: Very Cool";
     } else if (difference <= 55) {
-        resultElement.textContent = "Within 41-55: Cold";
+        guessResult = "Within 41-55: Cold";
     } else {
-        resultElement.textContent = "More than 55 away: Very Cold";
+        guessResult = "More than 55 away: Very Cold";
     }
-    //subtract guesses
+
     numGuess--;
     document.querySelector("#guesses").textContent = "Number of guesses left: " + numGuess;
+
+    // Store the current guess and guess result together
+    const guessInfo = current + ": " + guessResult;
+    guesses.push(guessInfo);
+
+    // Display previous guesses with line breaks
+    resultElement.innerHTML = "Previous guesses:<br>" + guesses.join("<br>");
+
     if (numGuess === 0) {
         c.disabled = true;
-        resultElement.textContent = "Out of guesses. The number was " + guessNumber;
+        resultElement.innerHTML += "<br>Out of guesses. The number was " + guessNumber;
     }
-    //list numbers 
-    num.push(current);
-    for (i = 0; i < num.length; i++){
-        resultElement.textContent = "Previous guesses: " + num[i] + resultElement.textContent + ", ";
-    }
-    
 }
+
 
 // Reset button handler
 function resetButtonHandler() {
