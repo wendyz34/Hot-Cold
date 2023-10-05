@@ -1,78 +1,67 @@
-/* styles.css */
 
-/* Set a gentle background color for the body */
 body {
-    background-color: #f5f5f5; /* Light Grayish-Blue */
+    background-color: #f5f5f5; 
     font-family: "Helvetica Neue", Arial, sans-serif;
     text-align: center;
     padding: 20px;
 }
 
-/* Style the header with a soft font */
 h1 {
     color: #333;
-    font-family: "Comic Sans MS", cursive, sans-serif; /* Softer font */
+    font-family: "Comic Sans MS", cursive, sans-serif; 
 }
 
-/* Style the instructions with a soft font */
 ul {
     list-style-type: square;
     text-align: left;
-    font-family: "Comic Sans MS", cursive, sans-serif; /* Softer font */
+    font-family: "Comic Sans MS", cursive, sans-serif; 
 }
 
-/* Style the warning with a soft font */
 h3 {
     color: red;
-    font-family: "Comic Sans MS", cursive, sans-serif; /* Softer font */
+    font-family: "Comic Sans MS", cursive, sans-serif;
 }
 
-/* Style the current value and guesses with a softer font */
 #current, #guesses {
     font-size: 18px;
     margin-top: 20px;
-    font-family: "Comic Sans MS", cursive, sans-serif; /* Softer font */
+    font-family: "Comic Sans MS", cursive, sans-serif; 
 }
 
-/* Style the result container with a softer font */
 #result {
     font-size: 16px;
     margin-top: 20px;
-    font-family: "Comic Sans MS", cursive, sans-serif; /* Softer font */
+    font-family: "Comic Sans MS", cursive, sans-serif; 
 }
 
-/* Style the buttons */
 button {
     font-size: 16px;
     padding: 10px 20px;
     margin: 5px;
     cursor: pointer;
-    font-family: "Comic Sans MS", cursive, sans-serif; /* Softer font */
+    font-family: "Comic Sans MS", cursive, sans-serif; 
 }
 
-/* Set a gentle background color for specific button categories */
 #commit {
-    background-color: #ffd699; /* Light Red for Subtract */
+    background-color: #ffd699; 
     color: white;
     border: none;
 }
 
 #resetButton {
-    background-color: #c5e1a5; /* Light Blue for Add */
+    background-color: #c5e1a5; 
     color: white;
     border: none;
 }
 
-/* Style cold buttons with a softer font */
 #b1, #b5, #b10, #b25 {
-    background-color: #add8e6; /* Light Green */
+    background-color: #add8e6; 
     color: white;
     border: none;
 }
 
-/* Style hot buttons with a softer font */
 #a1, #a5, #a10, #a25 {
-    background-color:#ff6666; /* Light Orange */
+    background-color:#ff6666; 
     color: white;
     border: none;
 }
