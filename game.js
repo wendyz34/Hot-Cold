@@ -70,7 +70,7 @@ function commit() {
     let guessResult = "";
 
     if (difference <= 5) {
-        guessResult = "No clues. Find the pattern";
+        guessResult = "Within 21-30: Cool!";
         numGuess += 1;
     } else if (difference <= 8) {
         guessResult = "Within 6-8: Hot";
@@ -101,6 +101,10 @@ function commit() {
     if (numGuess === 0) {
         c.disabled = true;
         resultElement.innerHTML += "<br>Out of guesses. The number was " + guessNumber;
+    }
+    // If guessed correctly 
+    if (current == guessNumber){
+        resultElement.textContent = "You Won!"
     }
 }
 
